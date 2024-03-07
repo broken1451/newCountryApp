@@ -1,0 +1,20 @@
+<h2>Por Region</h2>
+<hr>
+
+<div class="row">
+    <div class="col text-center">
+        <!-- <app-search-box [placeholder]="'Buscar por region'" (onDebouncer)="searchByRegion($event)"></app-search-box> -->
+        @for (region of regions; track region) {
+            <button class="btn mx-2"
+            [ngClass]="{ 'btn-outline-primary': selectedRegion === region }" 
+            (click)="searchByRegion(region)">{{ region }}</button>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <hr>
+        <app-country-table [countries]="counties"></app-country-table>
+    </div>
+</div>

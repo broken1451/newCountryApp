@@ -1,0 +1,18 @@
+<h2>Por Capital</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-search-box [initialValue]="initialValue" [placeholder]="'Buscar por capital'" (onDebouncer)="searchByCapital($event)"></app-search-box>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <hr>
+        @if (loading) {
+            <app-loading-spinner></app-loading-spinner>
+        }
+        <app-country-table [countries]="counties"></app-country-table>
+    </div>
+</div>
